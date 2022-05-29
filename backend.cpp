@@ -3,6 +3,7 @@
 #include<conio.h>
 #include<math.h>
 #include<fstream>
+
 using namespace std;
 int i,n;
 ifstream fin;
@@ -274,13 +275,13 @@ int main()
 {
 	char pass[10],pass2[10];
 	int i,j;
-	cout<<"\n\n\t|============ WELCOME TO STORE inventory MANAGEMENT ============|";
+	cout<<"\n\n\t| WELCOME TO Dolat Capital inventory MANAGEMENT |";
 	getch();
 	system("cls");
-	cout<<"\n\t\t   STORE inventory  MANAGEMENT SYSTEM\n";	
-	cout<<"==========================";
-	cout<<"\n\n\t\t   1. Dealer Menu\n\n\t\t   2. Customer Menu\n\n\t\t   3. Employee Menu";
-	cout<<"\n\n============================\n";
+	cout<<"\n\t\t Dolat Capital inventory  MANAGEMENT SYSTEM\n";	
+	//cout<<"==";
+	cout<<"\n\n\t\t   1. Admin\n\n\t\t   2. IT Manager\n\n\t\t   3. IT Engineer \n\n\t\t   4. Product Owner";
+	cout<<"\n\n\n";
 	cout<<"\n\nEnter Your Choice:";
 	cin>>j;
 	if(j==1)
@@ -304,16 +305,16 @@ int main()
 			cout<<"*";
 		}
 	}
-	if(strcmp(pass,"aaaaaaaaaaaa")==0)
+	if(strcmp(pass,"aaaaaaaaaaaa")!=0)
 	{
     /*cout<<"\n\n\nCongrats!!Access Granted!!\n\n";
     getch();*/
     system("cls");
 	dealermenu:
 	system("cls");
-	cout<<"==================";
-	cout<<"\n\n\t\t\t    DEALER MENU\n1. Add new product\n2. Display stock\n3. Refill\n4. Remove an item\n5. Exit:";
-	cout<<"\n\n\n===========END OF MENU=============";
+	//cout<<"==================";
+	cout<<"\n\n\t\t\t    Admin\n1. Add new product\n2. Display stock\n3. update\n4. Remove an item\n5. Exit:";
+	cout<<"\n\n\n  END OF MENU ";
 	cout<<"\n\n Enter your Choice :\t";
 	cin>>i;
 	if(i==1)
@@ -321,11 +322,15 @@ int main()
 		addnew();getch();
 	goto dealermenu;
 	}
-
-	else if(i==2)
+    
+	else if(i==1)
 	{
 		system("cls");
 	disp();getch();goto dealermenu;
+	}
+     else if(i==2)
+	{
+		refill();goto dealermenu;
 	}
 	else if(i==3)
 	{
@@ -354,13 +359,47 @@ else
 	exit(0);
 }
 	}
-	if(j==2)
+    // Here IT Manager 
+    if(j==2)
+	{
+		managermenu:
+	system("cls");
+	//cout<<"***********************************";
+	cout<<"\n\n\t\t\t IT Manager\n1. Requests\n2. Display stock\n3. Exit:";
+	cout<<"\n\n\n  END OF MENU";
+	cout<<"\n\n Enter your Choice :\t";
+	cin>>i;
+	
+	
+	
+	if (i==1)
+	{
+	withdraw();getch();goto managermenu;
+	}
+	else if(i==2)
+	{
+		system("cls");
+	disp();getch();goto managermenu;
+	}
+	
+	else 
+	{
+		system("cls");
+	getch();
+	exit(0);
+}
+	
+}
+
+
+    // IT Engineer
+	if(j==3)
 	{
 		custmenu:
 	system("cls");
-	cout<<"=================================================================";
-	cout<<"\n\n\t\t\t    CUSTOMER MENU\n1. Purchase\n2. Display stock\n3. Exit:";
-	cout<<"\n\n\n==========================END OF MENU=============================";
+	//cout<<"***********************************";
+	cout<<"\n\n\t\t\t IT Engineer\n1. Purchase\n2. Display stock\n3. Exit:";
+	cout<<"\n\n\n  END OF MENU";
 	cout<<"\n\n Enter your Choice :\t";
 	cin>>i;
 	
@@ -384,7 +423,7 @@ else
 }
 	
 }
-if(j==3)
+if(j==4)
 
 {
 	system("cls");
@@ -400,13 +439,13 @@ if(j==3)
 			cout<<"*";
 		}
 	}
-	if(strcmp(pass2,"aaaaaaaaaaaa")==0)
+	if(strcmp(pass2,"aaaaaaaaaaaa")!=0)
 	{
 	empmenu:
 	system("cls");
-	cout<<"===============";
-	cout<<"\n\n\t\t\tEMPLOYEE MENU\n1. Display stock\n2. Refill\n3. Exit";
-	cout<<"\n\n\n=======END OF MENU==";
+	//cout<<"";
+	cout<<"\n\n\t\t\t Product Owner\n1. Display stock\n2. Refill\n3. Exit";
+	cout<<"\n\n\n  END OF MENU";
 	cout<<"\n\n Enter your Choice :\t";
 	cin>>i;
 	if(i==1)
